@@ -1,0 +1,130 @@
+/* color scheme from https://designschool.canva.com/blog/website-color-schemes/ */ 
+
+.color-primary {
+    color : #c0b283;
+}
+
+.color-accent {
+    color : #dcd0c0;
+}
+
+.color-light {
+    color : #f4f4f4;
+}
+
+.color-dark { 
+    color : #373737;
+}
+
+.color-base {
+    color : white;
+}
+
+.background-primary {
+    background : #c0b283;
+}
+
+.background-primary-hover {
+    background: #c0b283;
+}
+
+.background-primary-hover:hover {
+    background: #dcd0c0;
+}
+
+.background-accent {
+    background : #dcd0c0;
+}
+
+.background-light {
+    background : #f4f4f4;
+}
+
+.background-red {
+    background : #B84040;
+}
+
+.background-blue {
+    background : #202080;
+}
+
+.background-dark { 
+    background : #373737;
+}
+
+.background-dark-hover { 
+    background : #373737;
+}
+
+.background-dark-hover:hover { 
+    background : #3C3C3C;
+}
+
+.background-transparent-primary  {
+    background :rgba(192, 178, 131, 0.5);
+}
+
+.background-transparent-light {
+    background :rgba(252, 252, 252, 0.75);
+}
+
+
+.background-transparent-light {
+    background :rgba(252, 252, 252, 0.75);
+}
+
+.background-transparent-color-B {
+    background :rgba(188, 64, 64, 0.75);
+}
+
+
+
+.background-transparent-color-B-dark {
+    background :rgba(118,26,26,0.5);
+    
+}
+
+.background-base {
+    background : white;
+}
+
+.border-primary {
+    border-color: #c0b283;
+}
+
+.border-accent {
+    border-color: #dcd0c0;
+}
+
+.border-blue {
+    border-color: #405098;
+}
+
+.border-red {
+    border-color: #B84040;
+}
+
+.border-yellow {
+    border-color: #f9d521;
+}
+
+
+.svg-color-A {
+    fill: #405098;
+}
+
+.svg-color-B {
+    fill: #B84040;
+}
+
+.svg-color-C {
+    fill: #f4f4f4;
+}
+
+.svg-color-D {
+    fill: #333333;
+}
+
+.svg-color-not-initialized {
+    fill: purple;
+}

@@ -1,0 +1,61 @@
+/* color scheme from https://designschool.canva.com/blog/website-color-schemes/ */ 
+
+.title-page-top-height {
+    height : 30%;
+}
+
+.title-page-bottom-height {
+    height : 62%;
+}
+
+.title-page-center-icon {
+    height: 148px;
+    width: 148px;
+    
+    margin-top: -74px;
+    
+    align-self: center;
+    
+    border-radius: 50%;
+}
+
+.title-page-center-icon-content {
+
+    height: 138px;
+    width: 138px;
+
+    margin-left: 1px;
+
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: solid;
+}
+
+.title-page-center-icon-text {
+    margin-top: 20px;
+
+    text-align: center;
+    
+    font-weight: bold;
+    font-size: 5.5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title-page-footer {
+    display: block;
+    margin-top:auto;
+    margin-bottom: 10px;
+    text-align: center;
+
+     font-family: Georgia;
+}
+
+.title-page-image-overlay {
+    position: absolute;
+    width: 400px;
+    height: 380px;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+

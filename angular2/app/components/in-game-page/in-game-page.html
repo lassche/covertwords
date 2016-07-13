@@ -1,0 +1,68 @@
+<style>
+    .top-container-size {
+        height: 10%;
+    }
+
+    .bottom-container-size {
+        height: 90%;
+    }
+
+    .center-element {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .score-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .hidden {
+        display :none;
+    }
+
+</style>
+
+
+<div>
+    <div class="page-component-top-container background-dark color-accent top-container-size">
+        
+        <div class="page-component-horizontal-line background-primary"></div>
+       
+    </div>
+
+    <div class="page-component-bottom-container background-accent bottom-container-size">
+        
+        <div class="page-component-horizontal-line background-primary"></div>
+
+        <div class="score-container">
+            <score-badge #_team1Score [_score]="gameModel.points[0]" [_borderColorCSS]="'border-red'"></score-badge>
+            <score-badge #_team2Score [_score]="gameModel.points[1]" [_borderColorCSS]="'border-blue'"></score-badge>            
+        </div> 
+
+        <div class="margin-top-small"> </div>
+        
+   
+        <board #_board class="center-element" (onCardFlipped)="handleOnCardFlipped($event)">
+        </board>
+
+
+
+        <div class="margin-footer"></div>
+        <div class="page-component-horizontal-line background-primary"></div>
+
+        <div #gameStateOverlayContainer class="hidden">
+            <game-state-overlay #gameStateOverlay (onContinueGame)="continueGame($event)" (onNextRound)="nextRound($event)" (onMainMenu)="mainMenu($event)"></game-state-overlay>
+        </div>
+
+    </div>
+
+    <!-- element at the bottom only showing when the player decides to continue the game after the game has been decided -->
+    <div #postResultOverlayContainer  class="hidden">
+        <post-game-result-overlay #postResultOverlay (onContinueGame)="continueGame($event)" (onNextRound)="nextRound($event)" (onMainMenu)="mainMenu($event)"></post-game-result-overlay>
+    </div>
+     
+</div>
+

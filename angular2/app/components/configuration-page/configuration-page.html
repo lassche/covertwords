@@ -1,0 +1,63 @@
+
+<div>
+    <div class="page-component-top-container background-light color-accent title-page-top-height">
+        
+        <div class="page-component-horizontal-line background-primary"></div>
+        
+        <title-component 
+            [_title]='"Mission briefing"'
+            class="title-component">
+        </title-component>
+    </div>
+
+    <div class="page-component-bottom-container background-dark title-page-bottom-height">
+        
+        <div class="page-component-horizontal-line background-primary"></div>
+
+        <div class="title-page-center-icon background-base">
+            <div class="title-page-center-icon-content border-primary ">
+                <div class="title-page-center-icon-text color-dark">?</div>
+            </div>
+        </div>
+
+
+        <div class="margin-top-small"> </div>
+        
+        <input-component #_missionName [_header]="'mission name:'" [_inputText]="'00-13 goes undercover'" ></input-component>
+        
+        <div class="margin-top-small"></div>
+
+         <span class="input-title color-primary">
+            role:
+        </span>
+        
+        <role-selection #_roleSelection></role-selection>
+
+        <div class="margin-top-small"> </div>
+
+        <span class="input-title color-primary">
+            starting agency:
+        </span>
+        
+        <agency-selection #_agencySelection></agency-selection>
+
+        <div class="margin-footer"> </div>
+
+        <div class="button-component-container">
+            <div class="button-component color-dark background-primary-hover" (click)="onBeginGame()">
+                BEGIN MISSION
+            </div>
+        </div>
+
+        <div class="title-page-footer color-primary" > 
+        </div>
+
+        <div class="page-component-horizontal-line background-primary"></div>
+
+    </div>
+
+     
+</div>
+
+<img src="../../assets/img/gun.png" class="title-page-image-overlay">
+

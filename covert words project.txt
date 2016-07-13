@@ -1,0 +1,9 @@
+Goal: make a 'code names' like game that can be played on a browser. 
+
+- Need two devices
+- Game is created from a random seed and selection of team (team giving hints, team guessing)
+- One team has the target screen (hints), the other team has the board (guessing)
+- The guessing can select words by clicking them for a second or two. The latter is to prevent accidental clicks.
+- After clicking a tile, the result will show up.
+
+Todo:
