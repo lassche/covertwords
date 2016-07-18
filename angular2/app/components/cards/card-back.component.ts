@@ -42,6 +42,10 @@ import {Component, Input, ViewChild} from '@angular/core';
         .card-label {
             width: 100%;
             z-index: 2;
+            -webkit-user-select: none;  
+            -moz-user-select: none;    
+            -ms-user-select: none;      
+            user-select: none;
         }
 
 

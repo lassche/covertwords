@@ -23,22 +23,14 @@ var CardFrontComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Boolean)
     ], CardFrontComponent.prototype, "_isShowingColor", void 0);
-    __decorate([
-        core_1.ViewChild('_cardBody'), 
-        __metadata('design:type', Object)
-    ], CardFrontComponent.prototype, "_cardBody", void 0);
     CardFrontComponent = __decorate([
         core_1.Component({
             selector: 'card-front',
             styleUrls: ['app/components/styles/colors.css',
-                'app/components/styles/page.css',
-                'app/components/styles/input.css',
                 'app/components/styles/label.css',
-                'app/components/styles/toggle-button.css',
-                'app/components/title-page/title-page.css'
+                'app/components/cards/card.css'
             ],
-            styles: ["\n        .card-body {\n            width: 148px;\n            height: 108px;\n            \n            position: relative;\n            display: flex;\n            flex-direction: column-reverse;\n            align-items:center;\n                        \n            border-radius: 5px;\n            box-shadow: 0px 5px 4px #282828;\n            margin:10px;\n\n            perspective: 800px;\n            \n        }\n        \n        .card-body:hover {\n            transform: scale(1.025, 1.025);\n        }\n        \n        .card-label {\n\n            z-index: 2;\n            width: 100%;\n            margin-bottom: 4px;\n            margin-left:   8px;\n            margin-right:  8px;\n        }\n\n        .card-background {\n            position: absolute;\n            left: 5;\n            top: 5;\n        }\n    "],
-            template: "\n        <div class='card-body background-dark-hover' >\n            \n            <div class='card-label label-medium color-dark background-transparent-light'>\n                {{_text}}\n            </div>\n\n            <div class='card-background'>\n                <ng-content></ng-content>\n           </div>\n            \n        <div>\n    "
+            template: "\n        <div class='card-body-front background-dark-hover' >\n            \n            <div class='card-label-front label-medium color-dark background-transparent-light'>\n                {{_text}}\n            </div>\n\n            <div class='card-background-front'>\n                <ng-content></ng-content>\n           </div>\n            \n        <div>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], CardFrontComponent);

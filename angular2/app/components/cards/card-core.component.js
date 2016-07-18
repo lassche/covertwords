@@ -32,8 +32,10 @@ var CardCoreComponent = (function () {
         core_1.Component({
             selector: 'card-core',
             directives: [card_container_component_1.CardContainer, card_back_component_1.CardBackComponent, card_front_component_1.CardFrontComponent],
-            styleUrls: ['app/components/styles/colors.css'],
-            template: "\n        <card-container [_viewModel]=\"_viewModel\" (onCardFlipped)=\"handleCardFlipped($event)\">\n            <front-content>\n\n                <card-back [_isShowingColor]=\"_viewModel._isShowingColor\" class=\"{{_viewModel._svgColorName}}\" [_text]=\"_viewModel._text\">\n                </card-back>\n                \n            </front-content>\n\n            <back-content>\n                <card-front   [_text]=\"_viewModel._text\">\n                    <img src=\"{{_viewModel._imageName}}\" width=\"138\" height=\"98\" />\n                </card-front>\n            </back-content>\n\n        </card-container> \n    ",
+            styleUrls: ['app/components/styles/colors.css',
+                'app/components/cards/card.css'
+            ],
+            template: "\n        <card-container [_viewModel]=\"_viewModel\" (onCardFlipped)=\"handleCardFlipped($event)\">\n            <front-content>\n\n                <card-back [_isShowingColor]=\"_viewModel._isShowingColor\" class=\"{{_viewModel._svgColorName}}\" [_text]=\"_viewModel._text\">\n                </card-back>\n                \n            </front-content>\n\n            <back-content>\n                <card-front [_text]=\"_viewModel._text\">\n                    <img draggable=\"false\" src=\"{{_viewModel._imageName}}\" width=\"138\" height=\"98\" />\n                </card-front>\n            </back-content>\n\n        </card-container> \n    ",
         }), 
         __metadata('design:paramtypes', [])
     ], CardCoreComponent);

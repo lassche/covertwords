@@ -7,3 +7,17 @@ Goal: make a 'code names' like game that can be played on a browser.
 - After clicking a tile, the result will show up.
 
 Todo:
+
+- Text on cards is still selectable
+
+Notes:
+
+* Git Process
+  - Initialize git in project 'git init'
+  - Create .gitignore (create textfile, rename in command line)
+  - 'git add' adds all files in current directory, git reset to undo that
+  - 'git status -u' show all added files
+  - 'git commit -m "message"' commit
+  - 'git remote add origin https://github.com/lassche/covertwords.git'
+  - 'git push -u origin master' 
+  - git interface, enter login / password 

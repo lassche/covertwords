@@ -1,3 +1,7 @@
+/**
+ * Class holding all the card information - the card's composition. 
+ */
+
 import {Component, Input,  EventEmitter, Output} from "@angular/core";
 
 import { CardBackComponent } from './card-back.component';
@@ -8,13 +12,14 @@ import { CardViewModel } from './card-viewmodel';
 import {CardStateChangedEvent} from './card-state-changed.event';
 
 
-
 @Component({
     selector: 'card-core',
 
     directives: [ CardContainer, CardBackComponent, CardFrontComponent ],
 
-     styleUrls : [ 'app/components/styles/colors.css'],
+     styleUrls : [ 'app/components/styles/colors.css',
+                    'app/components/cards/card.css'
+     ],
 
     template: `
         <card-container [_viewModel]="_viewModel" (onCardFlipped)="handleCardFlipped($event)">
@@ -26,8 +31,8 @@ import {CardStateChangedEvent} from './card-state-changed.event';
             </front-content>
 
             <back-content>
-                <card-front   [_text]="_viewModel._text">
-                    <img src="{{_viewModel._imageName}}" width="138" height="98" />
+                <card-front [_text]="_viewModel._text">
+                    <img draggable="false" src="{{_viewModel._imageName}}" width="138" height="98" />
                 </card-front>
             </back-content>
 
@@ -40,6 +45,9 @@ export class CardCoreComponent {
     @Input() _viewModel : CardViewModel;
     @Output() onCardFlipped = new EventEmitter<CardStateChangedEvent>();
 
+    /**
+     * Propagate the card flip event
+     */
     handleCardFlipped( cardState : CardStateChangedEvent) {
         this.onCardFlipped.emit(cardState);
     }
