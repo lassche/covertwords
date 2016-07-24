@@ -1,13 +1,14 @@
-import {Component, Input, ViewChild, AfterViewChecked} from '@angular/core';
+import { Component, Input, ViewChild, AfterViewChecked } from '@angular/core';
+import { Router } from '@angular/router-deprecated';
 
-import {CodeNamesStateMachine, Card, Configuration, GameTypes, GameModel, GameState} from '../../model';
-import {CardStateChangedEvent, CardViewModel} from '../cards';
+import { Card, Configuration, GameTypes, GameModel, GameState, StateNames} from '../../model';
+import { CardStateChangedEvent, CardViewModel } from '../cards';
 import { GameUtil } from '../../util/game-util';
 
-import {ScoreBadgeComponent} from './score-badge.component';
-import {GameStateOverlayComponent} from './game-state-overlay.component';
-import {PostGameResultOverlayComponent} from './post-game-result-overlay.component';
-import {BoardComponent} from './board.component';
+import { ScoreBadgeComponent } from './score-badge.component';
+import { GameStateOverlayComponent } from './game-state-overlay.component';
+import { PostGameResultOverlayComponent } from './post-game-result-overlay.component';
+import { BoardComponent } from './board.component';
 import { GameResultViewModel } from './game-result-view-model';
 
 
@@ -52,7 +53,7 @@ export class InGamePageComponent implements AfterViewChecked {
         'white' : 'svg-color-C'
     }
 
-    constructor( private _stateMachine  : CodeNamesStateMachine
+    constructor( private router  : Router
                , private configuration : Configuration
                , private gameModel     : GameModel ) {
     }
@@ -140,6 +141,6 @@ export class InGamePageComponent implements AfterViewChecked {
     } 
     
     mainMenu(evt) {
-        this._stateMachine.navigateToTitleState();
+        this.router.navigate([StateNames.title]);
     }
 }

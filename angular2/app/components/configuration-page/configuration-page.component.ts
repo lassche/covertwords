@@ -1,7 +1,8 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { Router } from '@angular/router-deprecated';
 
-import {CodeNamesStateMachine} from '../../model/code-names-statemachine';
-import {Configuration} from '../../model/configuration';
+
+import {Configuration, StateNames} from '../../model';
 
 import {TitleComponent} from '../shared/title.component';
 import {InputComponent} from '../shared/input.component';
@@ -32,15 +33,15 @@ export class ConfigurationPageComponent {
     @ViewChild('_roleSelection')   _roleSelection   : RoleSelectionComponent;
     @ViewChild('_agencySelection') _agencySelection : AgencySelectionComponent;
 
-    constructor( private _stateMachine : CodeNamesStateMachine
-               , private _configuration : Configuration ) {
+    constructor( private router : Router
+               , private configuration : Configuration ) {
     }
 
     onBeginGame() {
-        this._configuration._missionName = this._missionName._inputText;
-        this._configuration._localRole = this._roleSelection.selectedRole;
-        this._configuration.startTeam = this._agencySelection.selectedAgency;
+        this.configuration._missionName = this._missionName._inputText;
+        this.configuration._localRole = this._roleSelection.selectedRole;
+        this.configuration.startTeam = this._agencySelection.selectedAgency;
 
-        this._stateMachine.notifyConfigurationComplete();
+        this.router.navigate([StateNames.game]);
     }
 }

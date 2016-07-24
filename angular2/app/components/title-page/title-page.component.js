@@ -9,14 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var code_names_statemachine_1 = require('../../model/code-names-statemachine');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var model_1 = require('../../model');
 var title_component_1 = require('../shared/title.component');
 var TitlePageComponent = (function () {
-    function TitlePageComponent(_stateMachine) {
-        this._stateMachine = _stateMachine;
+    function TitlePageComponent(router) {
+        this.router = router;
     }
     TitlePageComponent.prototype.onBeginGame = function () {
-        this._stateMachine.notifyTitleScreenComplete();
+        this.router.navigate([model_1.StateNames.configuration]);
     };
     TitlePageComponent = __decorate([
         core_1.Component({
@@ -29,7 +30,7 @@ var TitlePageComponent = (function () {
             ],
             templateUrl: "app/components/title-page/title-page.html",
         }), 
-        __metadata('design:paramtypes', [code_names_statemachine_1.CodeNamesStateMachine])
+        __metadata('design:paramtypes', [router_deprecated_1.Router])
     ], TitlePageComponent);
     return TitlePageComponent;
 }());

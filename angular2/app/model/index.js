@@ -4,8 +4,9 @@ function __export(m) {
 }
 __export(require('./card'));
 __export(require('./card-factory'));
-__export(require('./code-names-statemachine'));
+//export * from './code-names-statemachine';
 __export(require('./configuration'));
 __export(require('./game-model'));
 __export(require('./game-types'));
+__export(require('./state-names'));
 //# sourceMappingURL=index.js.map

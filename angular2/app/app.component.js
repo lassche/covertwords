@@ -13,19 +13,16 @@ var router_deprecated_1 = require('@angular/router-deprecated');
 var index_1 = require('./components/index');
 var index_2 = require('./model/index');
 var AppComponent = (function () {
-    function AppComponent(_router, _gameModel, _configuration, _stateMachine) {
+    function AppComponent(_router, _gameModel, _configuration) {
         this._router = _router;
         this._gameModel = _gameModel;
         this._configuration = _configuration;
-        this._stateMachine = _stateMachine;
-        this.configureStateMachine(_stateMachine);
+        this.configureStateNames();
     }
-    AppComponent.prototype.configureStateMachine = function (stateMachine) {
-        stateMachine._titleScreenState.navigationTarget = 'Config';
-        stateMachine.titleStateName = "TitlePage";
-        stateMachine._configurationState.navigationTarget = 'InGame';
-        stateMachine.configurationStateName = "Config";
-        stateMachine.inGameStateName = "InGame";
+    AppComponent.prototype.configureStateNames = function () {
+        index_2.StateNames.title = "TitlePage";
+        index_2.StateNames.configuration = "Config";
+        index_2.StateNames.game = "InGame";
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -33,7 +30,7 @@ var AppComponent = (function () {
             directives: [router_deprecated_1.ROUTER_DIRECTIVES, index_1.InGamePageComponent, index_1.TitlePageComponent, index_1.ConfigurationPageComponent],
             styleUrls: ['app/components/styles/colors.css'],
             template: "<router-outlet></router-outlet>",
-            providers: [router_deprecated_1.ROUTER_PROVIDERS, index_2.GameModel, index_2.CodeNamesStateMachine, index_2.Configuration],
+            providers: [router_deprecated_1.ROUTER_PROVIDERS, index_2.GameModel, index_2.Configuration],
         }),
         router_deprecated_1.RouteConfig([
             {
@@ -54,7 +51,7 @@ var AppComponent = (function () {
             },
             { path: '/**', redirectTo: ['TitlePage'] }
         ]), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, index_2.GameModel, index_2.Configuration, index_2.CodeNamesStateMachine])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, index_2.GameModel, index_2.Configuration])
     ], AppComponent);
     return AppComponent;
 }());

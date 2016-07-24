@@ -1,3 +1,6 @@
+/**
+ * Class holding all the card information - the card's composition.
+ */
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -17,6 +20,9 @@ var CardCoreComponent = (function () {
     function CardCoreComponent() {
         this.onCardFlipped = new core_1.EventEmitter();
     }
+    /**
+     * Propagate the card flip event
+     */
     CardCoreComponent.prototype.handleCardFlipped = function (cardState) {
         this.onCardFlipped.emit(cardState);
     };

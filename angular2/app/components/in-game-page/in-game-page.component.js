@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var model_1 = require('../../model');
 var cards_1 = require('../cards');
 var score_badge_component_1 = require('./score-badge.component');
@@ -16,8 +17,8 @@ var game_state_overlay_component_1 = require('./game-state-overlay.component');
 var post_game_result_overlay_component_1 = require('./post-game-result-overlay.component');
 var board_component_1 = require('./board.component');
 var InGamePageComponent = (function () {
-    function InGamePageComponent(_stateMachine, configuration, gameModel) {
-        this._stateMachine = _stateMachine;
+    function InGamePageComponent(router, configuration, gameModel) {
+        this.router = router;
         this.configuration = configuration;
         this.gameModel = gameModel;
         this._imageNameMap = {
@@ -95,7 +96,7 @@ var InGamePageComponent = (function () {
         this.beginRound();
     };
     InGamePageComponent.prototype.mainMenu = function (evt) {
-        this._stateMachine.navigateToTitleState();
+        this.router.navigate([model_1.StateNames.title]);
     };
     __decorate([
         core_1.ViewChild('_board'), 
@@ -130,7 +131,7 @@ var InGamePageComponent = (function () {
             ],
             templateUrl: "app/components/in-game-page/in-game-page.html",
         }), 
-        __metadata('design:paramtypes', [model_1.CodeNamesStateMachine, model_1.Configuration, model_1.GameModel])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, model_1.Configuration, model_1.GameModel])
     ], InGamePageComponent);
     return InGamePageComponent;
 }());

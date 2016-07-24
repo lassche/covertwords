@@ -9,22 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var code_names_statemachine_1 = require('../../model/code-names-statemachine');
-var configuration_1 = require('../../model/configuration');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var model_1 = require('../../model');
 var title_component_1 = require('../shared/title.component');
 var input_component_1 = require('../shared/input.component');
 var role_selection_component_1 = require('./role-selection.component');
 var agency_selection_component_1 = require('./agency-selection.component');
 var ConfigurationPageComponent = (function () {
-    function ConfigurationPageComponent(_stateMachine, _configuration) {
-        this._stateMachine = _stateMachine;
-        this._configuration = _configuration;
+    function ConfigurationPageComponent(router, configuration) {
+        this.router = router;
+        this.configuration = configuration;
     }
     ConfigurationPageComponent.prototype.onBeginGame = function () {
-        this._configuration._missionName = this._missionName._inputText;
-        this._configuration._localRole = this._roleSelection.selectedRole;
-        this._configuration.startTeam = this._agencySelection.selectedAgency;
-        this._stateMachine.notifyConfigurationComplete();
+        this.configuration._missionName = this._missionName._inputText;
+        this.configuration._localRole = this._roleSelection.selectedRole;
+        this.configuration.startTeam = this._agencySelection.selectedAgency;
+        this.router.navigate([model_1.StateNames.game]);
     };
     __decorate([
         core_1.ViewChild('_missionName'), 
@@ -51,7 +51,7 @@ var ConfigurationPageComponent = (function () {
             ],
             templateUrl: "app/components/configuration-page/configuration-page.html",
         }), 
-        __metadata('design:paramtypes', [code_names_statemachine_1.CodeNamesStateMachine, configuration_1.Configuration])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, model_1.Configuration])
     ], ConfigurationPageComponent);
     return ConfigurationPageComponent;
 }());

@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {CodeNamesStateMachine} from '../../model/code-names-statemachine';
 
+import { Router } from '@angular/router-deprecated';
+
+import { StateNames} from '../../model';
 import {TitleComponent} from '../shared/title.component';
 
 @Component({
@@ -19,10 +21,10 @@ import {TitleComponent} from '../shared/title.component';
 
 export class TitlePageComponent {
 
-    constructor( private _stateMachine : CodeNamesStateMachine ) {
+    constructor( private router : Router ) {
     }
 
     onBeginGame() {
-        this._stateMachine.notifyTitleScreenComplete();
+        this.router.navigate([StateNames.configuration]);
     }
 }
